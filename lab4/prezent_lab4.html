@@ -1,0 +1,13 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>ЛР4 — презентация</title><style>
+body{margin:0;font-family:Arial,sans-serif;background:#1f2430;color:#fff}.slide{width:100vw;height:100vh;box-sizing:border-box;padding:64px 80px;border-bottom:1px solid #394050;display:flex;flex-direction:column;justify-content:center}.slide h1{font-size:42px;margin:0 0 18px}.slide h2{font-size:28px;margin:0 0 18px;color:#d8e3ff}.slide p,.slide li{font-size:24px;line-height:1.45}.accent{color:#7fc0ff} code{background:#111827;padding:2px 6px;border-radius:6px} pre{background:#111827;padding:18px;border-radius:12px;font-size:22px;overflow:auto}</style></head><body>
+<section class="slide"><h1>Лабораторная работа № 4</h1><h2>Дискреционное разграничение прав в Linux. Расширенные атрибуты</h2><p>Скворцова Анастасия<br>НБИбд-01-24</p></section>
+<section class="slide"><h1>Актуальность темы</h1><ul><li>В Linux разграничение доступа реализуется не только базовыми правами <code>rwx</code>, но и расширенными атрибутами.</li><li>Атрибуты <code>a</code> и <code>i</code> позволяют дополнительно ограничить операции над файлами.</li><li>Практическое понимание этих механизмов важно для администрирования и защиты данных.</li></ul></section>
+<section class="slide"><h1>Цель работы</h1><p>Получить практические навыки работы в консоли Linux с расширенными атрибутами файлов и исследовать влияние атрибутов <code>a</code> и <code>i</code> на изменение файлов.</p></section>
+<section class="slide"><h1>Исходные команды</h1><pre>lsattr /home/guest/dir1/file1
+chmod 600 /home/guest/dir1/file1
+chattr +a /home/guest/dir1/file1</pre><p><span class="accent">lsattr</span> показывает расширенные атрибуты. <span class="accent">chmod 600</span> даёт доступ только владельцу.</p></section>
+<section class="slide"><h1>Атрибут <code>a</code></h1><ul><li>Устанавливается только суперпользователем.</li><li>Разрешает добавление данных в конец файла.</li><li>Запрещает обычную перезапись, удаление и переименование.</li></ul></section>
+<section class="slide"><h1>Атрибут <code>i</code></h1><ul><li>Делает файл неизменяемым.</li><li>Запрещает дозапись, перезапись, удаление и переименование.</li><li>Снимается только суперпользователем.</li></ul></section>
+<section class="slide"><h1>Сравнение <code>a</code> и <code>i</code></h1><ul><li><code>a</code> — разрешена только дозапись.</li><li><code>i</code> — любые изменения запрещены.</li><li>Оба атрибута усиливают защиту файла по сравнению с обычными правами доступа.</li></ul></section>
+<section class="slide"><h1>Выводы</h1><ul><li>Исследованы расширенные атрибуты Linux.</li><li>На практике подтверждено различие между <code>a</code> и <code>i</code>.</li><li>Цель работы достигнута.</li></ul></section>
+</body></html>
